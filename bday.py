@@ -20,7 +20,7 @@ data = worksheet.get_all_values()
 now = datetime.now()
 current_date = now.date()
 cur_year = int(current_date.strftime('%Y'))
-cur_date = current_date.strftime('%m/%d')
+cur_date = current_date.strftime('%-m/%-d')
 
 
 
@@ -52,7 +52,7 @@ try:
         for i in range(len(people)):
             receiver = emails[i]
             subject = f"HAPPY BIRTHDAY, {people[i]}!"
-            message = f"AYYO {people[i]}! \n\nIT'S YOUR {ages[i]}TH BIRTHDAY... HAVE A BLAST!\n\nBest Wishes,\nNeil Shastri\n\nThis is part of my Birthday-Emailer project. You can check out the code at the link below.\n(https://github.com/Neil-Shastri/Birthday-Emailer)"
+            message = f"AYYO {people[i]}! \n\nYOU'RE {ages[i]} YEARS OLD... HAVE A BLAST!\n\nBest Wishes,\nNeil Shastri\n\nThis is part of my Birthday-Emailer project. You can check out the code at the link below.\n(https://github.com/Neil-Shastri/Birthday-Emailer)"
             full_message = f"Subject: {subject}\n\n{message}"
             server.sendmail(sender, receiver, full_message)
 
